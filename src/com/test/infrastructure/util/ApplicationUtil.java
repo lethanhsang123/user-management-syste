@@ -5,11 +5,15 @@ import com.test.domain.UserActivity;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.Objects;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ApplicationUtil {
 
     public static final BigDecimal ONE_VALUE = new BigDecimal(1);
+    public static final String USER_INPUT_REGEX = "\\d+\\,\\d+\\,\\d+";
 
     public static void getApplicationMenu() {
         System.out.println();
@@ -52,7 +56,7 @@ public class ApplicationUtil {
     public static BigInteger promptForBigInteger(Scanner scanner, String message) {
         System.out.println(message);
         while (!scanner.hasNextBigInteger()) {
-            System.out.println("Invalid input. Please enter a valid number.");
+            System.out.println("Invalid input. Please enter a valid number: ");
             scanner.next(); // Clear invalid input
         }
         return scanner.nextBigInteger();
@@ -61,19 +65,29 @@ public class ApplicationUtil {
     public static Long promptForLong(Scanner scanner, String message) {
         System.out.println(message);
         while (!scanner.hasNextLong()) {
-            System.out.println("Invalid input. Please enter a valid number.");
+            System.out.println("Invalid input. Please enter a valid number: ");
             scanner.next(); // Clear invalid input
         }
         return scanner.nextLong();
     }
 
-    public static String promptForString(Scanner scanner, String message) {
-        System.out.println(message);
+    public static String promptForString(Scanner scanner, String message, String regex) {
+        System.out.print(message);
         while (!scanner.hasNextLine()) {
-            System.out.println("Invalid input. Please enter a valid message.");
+            System.out.println("Invalid input. Please enter a valid message: ");
             scanner.next(); // Clear invalid input
         }
-        return scanner.nextLine();
+        String input = scanner.nextLine();
+        if (Objects.nonNull(regex) && !regex.isBlank()) {
+            Pattern pattern = Pattern.compile(regex);
+            Matcher matcher = pattern.matcher(input);
+            while (!matcher.matches()) {
+                System.out.println("Invalid input format([userId],[action],[timeStamp]). Please enter a valid message: ");
+                scanner.next(); // Clear invalid input
+            }
+        }
+
+        return input;
     }
 
     public static UserActivity rawDataToUserActivity(String[] values) {

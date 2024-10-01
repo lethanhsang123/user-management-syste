@@ -25,6 +25,9 @@ public class ConsoleApplication {
     private static final CalculateUserPoints calculateUserPoints = new CalculateUserPoints(repository);
     private static final GenerateLeaderboard generateLeaderboard = new GenerateLeaderboard(repository);
 
+    /**
+     * Hàm thực hiện quản lý các chức năng trong hệ thống
+     */
     public void execute() {
         Scanner scanner = new Scanner(System.in);
         BigInteger userInput;
@@ -33,11 +36,11 @@ public class ConsoleApplication {
             userInput = scanner.nextBigInteger();
             scanner.nextLine();
             switch (userInput.intValue()) {
-                case 1: {
+                case 1: {   // Chức năng import user với file
                     this.importUser();
                     break;
                 }
-                case 2: {
+                case 2: {   // Chức năng tìm kiếm lịch sử user
                     this.checkUserHistory(scanner);
                     break;
                 }
@@ -153,7 +156,7 @@ public class ConsoleApplication {
     }
 
     private void addUserData(Scanner scanner) {
-        String user = ApplicationUtil.promptForString(scanner, ApplicationUtil.getInputUserDataMessage());
+        String user = ApplicationUtil.promptForString(scanner, ApplicationUtil.getInputUserDataMessage(), ApplicationUtil.USER_INPUT_REGEX);
         String[] values = user.split(",");
         UserActivity userActivity = ApplicationUtil.rawDataToUserActivity(values);
         repository.save(userActivity);

@@ -38,7 +38,7 @@ public class CSVUserActivityRepository implements UserActivityRepository {
         JFileChooser fileChooser = new JFileChooser();
 
         // Set the title for the file explorer
-        fileChooser.setDialogTitle("Select a file");
+        fileChooser.setDialogTitle("Select User file (CSV)");
 
         // Show the open dialog and capture the user's selection
         int userSelection = fileChooser.showOpenDialog(null);
