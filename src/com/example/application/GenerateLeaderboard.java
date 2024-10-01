@@ -1,7 +1,7 @@
-package com.test.application;
+package com.example.application;
 
-import com.test.domain.UserActivity;
-import com.test.infrastructure.repository.UserActivityRepository;
+import com.example.domain.UserActivity;
+import com.example.infrastructure.repository.UserActivityRepository;
 
 import java.util.HashMap;
 import java.util.List;

@@ -1,6 +1,6 @@
-package com.test;
+package com.example;
 
-import com.test.application.console.ConsoleApplication;
+import com.example.application.console.ConsoleApplication;
 
 public class Main {
 

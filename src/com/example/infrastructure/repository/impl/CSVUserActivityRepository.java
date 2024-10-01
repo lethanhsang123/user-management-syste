@@ -1,8 +1,8 @@
-package com.test.infrastructure.repository.impl;
+package com.example.infrastructure.repository.impl;
 
-import com.test.domain.UserActivity;
-import com.test.infrastructure.repository.UserActivityRepository;
-import com.test.infrastructure.util.ApplicationUtil;
+import com.example.domain.UserActivity;
+import com.example.infrastructure.repository.UserActivityRepository;
+import com.example.infrastructure.util.ApplicationUtil;
 
 import javax.swing.*;
 import java.io.*;

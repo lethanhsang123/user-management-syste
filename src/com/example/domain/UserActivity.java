@@ -1,4 +1,4 @@
-package com.test.domain;
+package com.example.domain;
 
 public class UserActivity {
     private final int userId;

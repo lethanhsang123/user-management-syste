@@ -1,12 +1,12 @@
-package com.test.application.console;
+package com.example.application.console;
 
-import com.test.application.CalculateUserPoints;
-import com.test.application.CheckUserHistory;
-import com.test.application.GenerateLeaderboard;
-import com.test.domain.UserActivity;
-import com.test.infrastructure.repository.UserActivityRepository;
-import com.test.infrastructure.repository.impl.CSVUserActivityRepository;
-import com.test.infrastructure.util.ApplicationUtil;
+import com.example.application.CalculateUserPoints;
+import com.example.application.CheckUserHistory;
+import com.example.application.GenerateLeaderboard;
+import com.example.domain.UserActivity;
+import com.example.infrastructure.repository.UserActivityRepository;
+import com.example.infrastructure.repository.impl.CSVUserActivityRepository;
+import com.example.infrastructure.util.ApplicationUtil;
 
 import javax.swing.*;
 import java.io.BufferedWriter;

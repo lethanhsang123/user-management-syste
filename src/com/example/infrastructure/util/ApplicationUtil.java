@@ -1,7 +1,7 @@
-package com.test.infrastructure.util;
+package com.example.infrastructure.util;
 
-import com.test.domain.ActionType;
-import com.test.domain.UserActivity;
+import com.example.domain.ActionType;
+import com.example.domain.UserActivity;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;

@@ -1,6 +1,6 @@
-package com.test.infrastructure.repository;
+package com.example.infrastructure.repository;
 
-import com.test.domain.UserActivity;
+import com.example.domain.UserActivity;
 
 import java.util.List;
 
