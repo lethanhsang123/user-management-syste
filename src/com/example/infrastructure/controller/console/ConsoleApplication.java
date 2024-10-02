@@ -1,4 +1,4 @@
-package com.example.application.console;
+package com.example.infrastructure.controller.console;
 
 import com.example.application.CalculateUserPoints;
 import com.example.application.CheckUserHistory;
@@ -103,6 +103,7 @@ public class ConsoleApplication {
         Long toDate = ApplicationUtil.promptForLong(scanner, ApplicationUtil.getInputToDateMessage());
 
         List<Map.Entry<Integer, Integer>> leaderboard = generateLeaderboard.execute(fromDate, toDate);
+        System.out.println("*******LEADER BOARD WITH USERS*******");
         leaderboard.forEach(entry -> System.out.println("User: " + entry.getKey() + ", Points: " + entry.getValue()));
     }
 

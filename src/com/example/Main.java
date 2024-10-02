@@ -1,6 +1,6 @@
 package com.example;
 
-import com.example.application.console.ConsoleApplication;
+import com.example.infrastructure.controller.console.ConsoleApplication;
 
 public class Main {
 
